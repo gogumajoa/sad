@@ -78,6 +78,7 @@
   width: 150px;
   height: 220px;
 }
+
 /*이미지 & 정사각형*/
 .img-wp {
   /* position: relative; */
@@ -96,6 +97,20 @@
   height: 100%;
   object-fit: cover;
   margin: auto;
+}
+
+/*웹툰명 및 작가명*/
+#title{
+  position: relative;
+  top : 10px;
+  font-size : 18px;
+  font-weight: 600;
+  text-align : left;
+}
+#name{
+  position: relative;
+  top : 5px;
+  text-align : left;
 }
 
 @media (prefers-reduced-motion: no-preference) {
