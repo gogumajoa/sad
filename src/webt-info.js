@@ -60,7 +60,14 @@ let WebtInfo = [
     id : 8 ,
     picture : "https://shared-comic.pstatic.net/thumb/webtoon/748105/thumbnail/thumbnail_IMAG06_fa3bf10d-1b8f-40cd-a8eb-01caf9bbc3e4.jpg",
     title : "내가멀잘못했는데",
-    name: "자까",
+    name: "세진",
+    explain : "Sample"
+  },
+  {
+    id : 9 ,
+    picture : "https://shared-comic.pstatic.net/thumb/webtoon/748105/thumbnail/thumbnail_IMAG06_fa3bf10d-1b8f-40cd-a8eb-01caf9bbc3e4.jpg",
+    title : "내가멀잘못했는데",
+    name: "세진",
     explain : "Sample"
   }
 ];

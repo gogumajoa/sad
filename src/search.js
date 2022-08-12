@@ -21,7 +21,7 @@ class Search extends Component{
         const styleInfo = { //const는 재할당이 불가능한 변수 =상수
             paddingRight: '10px' //그냥 글자 간격 띄워주는거임
         }
-        //2)검색 상자 추가
+        //2)검색 상자 추가 - 검색 상자 스타일
         const elementStyle ={
             border:'solid',
             borderRadius:'10px',
@@ -55,8 +55,11 @@ class Search extends Component{
         })
 
         return (
-            <div> 
-                <input  type="text" placeholder="Enter item to be searched" style={elementStyle} onChange={(e)=>this.searchSpace(e)}/>
+            <div> {/* 검색 입력 받기 */}
+                <input  type="text" 
+                placeholder="Enter item to be searched" 
+                style={elementStyle} 
+                onChange={(e)=>this.searchSpace(e)}/>
                 {items}
             </div>
         )

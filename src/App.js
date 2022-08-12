@@ -4,6 +4,7 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import Genre from './genre.js'
 import Main from './main.js'
 import Search from './search.js';
+import Searchcopy from './search copy.js';
 
 function App() {
   let navigate = useNavigate()
@@ -34,6 +35,9 @@ function App() {
         <Route path="/search" element={ <Search/>} />
       </Routes>
 
+      <Routes>
+        <Route path="/searchcopy" element={ <Searchcopy/>} />
+      </Routes>
 
     </div>
   );

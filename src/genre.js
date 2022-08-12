@@ -4,8 +4,8 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import WebtInfo from './webt-info.js';
 
-
 function Genre() {
+  let [WebInfo] = useState(WebtInfo)
   let navigate = useNavigate()
 
   return (
@@ -41,14 +41,17 @@ function Genre() {
         <div className="Tooncontainer">
           <Container>
             <Row className="justify-content-center">
-            <Col md="auto"><Cards WebtInfo={WebtInfo[0]}/></Col>
+              {WebInfo.map((a,i)=>{
+                return(<Col md="auto"><Cards WebtInfo={WebtInfo[i]}/></Col>)
+              })}
+            {/* <Col md="auto"><Cards WebtInfo={WebtInfo[0]}/></Col>
             <Col md="auto"><Cards WebtInfo={WebtInfo[1]}/></Col>
             <Col md="auto"><Cards WebtInfo={WebtInfo[2]}/></Col>
             <Col md="auto"><Cards WebtInfo={WebtInfo[3]}/></Col>
             <Col md="auto"><Cards WebtInfo={WebtInfo[4]}/></Col>
             <Col md="auto"><Cards WebtInfo={WebtInfo[5]}/></Col>
             <Col md="auto"><Cards WebtInfo={WebtInfo[6]}/></Col>
-            <Col md="auto"><Cards WebtInfo={WebtInfo[7]}/></Col>
+            <Col md="auto"><Cards WebtInfo={WebtInfo[7]}/></Col> */}
             </Row>
           </Container>
         </div>
@@ -64,10 +67,10 @@ function Cards(props){
     <div id="box">
       <div className="col-xs-1 col-lg-1 col-md-1">
       <div className="img-wp">
-        <img id="Cardimg" src={props.WebtInfo.picture}/>
+        <img type="button" id="Cardimg" src={props.WebtInfo.picture}  onClick={()=>{ navigate('/')}} />
       </div>
-        <h5 id="title">{props.WebtInfo.title}</h5>
-        <p id="name">{props.WebtInfo.name}</p>
+        <h5 type="button" id="title" onClick={()=>{ navigate('/')}} >{props.WebtInfo.title}</h5>
+        <p type="button" id="name" onClick={()=>{ navigate('/')}}>{props.WebtInfo.name}</p>
       </div>
     </div>
   )
