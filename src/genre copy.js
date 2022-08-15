@@ -7,7 +7,35 @@ import Review from './review.js';
 
 function Genre() {
   let [WebInfo] = useState(WebtInfo)
+
+  let [search, setSearch] = useState(null)
+  let [btClick, setbtClick] = useState(0)
+
   let navigate = useNavigate()
+
+  const items = WebtInfo.filter((data) => {
+    if (btClick == 1) {
+      if (search == null)
+        return data
+      else if (data.title.toLowerCase().includes(search.toLowerCase()) || data.name.toLowerCase().includes(search.toLowerCase())) {
+        return data
+      }
+    }
+    else if (btClick == 0)
+      return data
+  }).map(data => {
+    return (
+      <div id="box">
+        <div className="col-xs-1 col-lg-1 col-md-1">
+          <div className="img-wp">
+            <img type="button" id="Cardimg" src={data.picture}/>
+          </div>
+          <h5 type="button" id="title">{data.title}</h5>
+          <p type="button" id="name">{data.name}</p>
+        </div>
+      </div>
+    )
+  })
 
   return (
     <div className="Genre">
@@ -17,8 +45,11 @@ function Genre() {
           <img className="flock_logo" src='img/flock_logo.png'
           onClick={()=>{ navigate('/')}}/> {/*클릭하면 홈 이동*/}
         </Navbar.Brand>
-        <input id="input" placeholder="검색어를 입력하세요"/>
-        <button id="button">검색</button>
+
+        <input id="input" placeholder="검색어를 입력하세요"
+        onChange={(e)=>{setSearch(e.target.value)}}
+        onClick={()=>{setbtClick(0)}}/>
+        <button id="button" onClick={()=>{setbtClick(1)}}>검색</button>
       </div>
 
       {/*가운데 장르 목록 넣기*/}
@@ -41,9 +72,10 @@ function Genre() {
         <div className="Tooncontainer">
           <Container>
             <Row className="justify-content-center">
-              {WebInfo.map((a,i)=>{
+              {items}
+              {/* {WebInfo.map((a,i)=>{
                 return(<Col md="auto"><Cards WebtInfo={WebtInfo[i]}/></Col>)
-              })}
+              })} */}
             </Row>
           </Container>
         </div>
@@ -57,10 +89,10 @@ function Cards(props){
     <div id="box">
       <div className="col-xs-1 col-lg-1 col-md-1">
       <div className="img-wp">
-        <img type="button" id="Cardimg" src={props.WebtInfo.picture}  onClick={()=>{ navigate('/')}} />
+        <img type="button" id="Cardimg" src={props.data.picture}  onClick={()=>{ navigate('/')}} />
       </div>
-        <h5 type="button" id="title" onClick={()=>{ navigate('/')}} >{props.WebtInfo.title}</h5>
-        <p type="button" id="name" onClick={()=>{ navigate('/')}}>{props.WebtInfo.name}</p>
+        <h5 type="button" id="title" onClick={()=>{ navigate('/')}} >{props.data.title}</h5>
+        <p type="button" id="name" onClick={()=>{ navigate('/')}}>{props.data.name}</p>
       </div>
     </div>
   )

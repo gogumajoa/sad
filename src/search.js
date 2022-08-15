@@ -55,11 +55,8 @@ class Search extends Component{
         })
 
         return (
-            <div> {/* 검색 입력 받기 */}
-                <input  type="text" 
-                placeholder="Enter item to be searched" 
-                style={elementStyle} 
-                onChange={(e)=>this.searchSpace(e)}/>
+            <div> {/*검색기능 */}
+                <input  type="text" placeholder="Enter item to be searched" style={elementStyle} onChange={(e)=>this.searchSpace(e)}/>
                 {items}
             </div>
         )

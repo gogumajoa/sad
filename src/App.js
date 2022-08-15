@@ -5,6 +5,7 @@ import Genre from './genre.js'
 import Main from './main.js'
 import Search from './search.js';
 import Searchcopy from './search copy.js';
+import Genrecopy from './genre copy.js';
 
 function App() {
   let navigate = useNavigate()
@@ -38,6 +39,11 @@ function App() {
       <Routes>
         <Route path="/searchcopy" element={ <Searchcopy/>} />
       </Routes>
+
+      <Routes>
+        <Route path="/genrecopy" element={ <Genrecopy/>} />
+      </Routes>
+
 
     </div>
   );

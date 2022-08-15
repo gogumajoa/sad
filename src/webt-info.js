@@ -66,8 +66,8 @@ let WebtInfo = [
   {
     id : 9 ,
     picture : "https://shared-comic.pstatic.net/thumb/webtoon/748105/thumbnail/thumbnail_IMAG06_fa3bf10d-1b8f-40cd-a8eb-01caf9bbc3e4.jpg",
-    title : "내가멀잘못했는데",
-    name: "세진",
+    title : "내가멀잘",
+    name: "세",
     explain : "Sample"
   }
 ];
