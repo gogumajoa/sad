@@ -2,8 +2,8 @@ import './genre.css';
 import {Nav, Navbar, Container, Col, Row} from 'react-bootstrap'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import WebtInfo from './webt-info.js';
-import Review from './review.js';
+import WebtInfo from '../webt-info.js';
+import Review from '../review.js';
 
 function Genre() {
   let [WebInfo] = useState(WebtInfo)
@@ -13,6 +13,7 @@ function Genre() {
 
   let navigate = useNavigate()
 
+  {/*검색기능*/}
   const items = WebtInfo.filter((data) => {
     if (btClick == 1) {
       if (search == null)
@@ -46,7 +47,7 @@ function Genre() {
           onClick={()=>{ navigate('/')}}/> {/*클릭하면 홈 이동*/}
         </Navbar.Brand>
 
-        <input id="input" placeholder="검색어를 입력하세요"
+        <input id="input" placeholder=" 검색어를 입력하세요"
         onChange={(e)=>{setSearch(e.target.value)}}
         onClick={()=>{setbtClick(0)}}/>
         <button id="button" onClick={()=>{setbtClick(1)}}>검색</button>

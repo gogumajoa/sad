@@ -17,7 +17,7 @@ function Main() {
         </Navbar.Brand>
     </div>
       <div className="Logo">
-        <input id="input" placeholder="검색어를 입력하세요"/>
+        <input id="input" placeholder=" 검색어를 입력하세요"/>
         <button id="button">검색</button>
       </div>
 
@@ -26,12 +26,12 @@ function Main() {
         <Navbar bg="" variant="light">
         <Container>
           <Nav className="M_me-auto">
-            <Nav.Link href="genre">일상/개그</Nav.Link>
-            <Nav.Link href="genre">순정</Nav.Link>
-            <Nav.Link href="genre">무협/사극</Nav.Link>
-            <Nav.Link href="genre">판타지/SF</Nav.Link>
-            <Nav.Link href="genre">스포츠</Nav.Link>
-            <Nav.Link href="genre">공포/스릴러</Nav.Link>
+            <Nav.Link href="/genre/gag">일상/개그</Nav.Link>
+            <Nav.Link href="/genre/love">순정</Nav.Link>
+            <Nav.Link href="/genre/action">무협/사극</Nav.Link>
+            <Nav.Link href="/genre/fantasy">판타지/SF</Nav.Link>
+            <Nav.Link href="/genre/sport">스포츠</Nav.Link>
+            <Nav.Link href="/genre/thrill">공포/스릴러</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

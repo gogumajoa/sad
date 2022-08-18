@@ -48,6 +48,10 @@
 .wkdfm{
   margin: 0 auto;
 }
+
+#click{
+  color : #ffffff;
+}
   
 /*웹툰 목록 css*/
 
@@ -72,6 +76,13 @@
 .col-md-1{
   width: 130px;
   height: 220px;
+}
+
+.justify-content-center{
+  width : 75%;
+  display: flex;
+  justify-content: center;
+  margin : 0 auto;
 }
   
 /*이미지 & 정사각형*/
@@ -103,5 +114,12 @@
   position: relative;
   top : 5px;
   text-align : left;
+}
+
+/*페이지네이션 버튼*/
+.Pagina{
+  position: relative;
+  top : 90px;
+  bottom : 30px;
 }
   

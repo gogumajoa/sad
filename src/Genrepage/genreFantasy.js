@@ -1,9 +1,9 @@
-import './genre.css';
+import '../genre.css';
 import {Nav, Navbar, Container, Col, Row} from 'react-bootstrap'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import WebtInfo from './webt-info.js';
-import Pagination from './Pagination/pagination.js'
+import WebtInfo from '../webt-info.js';
+import Pagination from '../Pagination/pagination.js'
 
 function Genre() {
   let [WebInfo] = useState(WebtInfo)
@@ -20,15 +20,20 @@ function Genre() {
 
   let navigate = useNavigate()
 
-  useEffect(() => setPosts(WebInfo)); //임시 데이터 불러왔음
-  
+  //데이터 불러왔음
+
+  useEffect(() => {
+    fetch('http://43.200.205.215:8080/webtoons?genre=판타지')
+      .then((res) => res.json()) 
+      .then((data) => setPosts(data.webtoonInfoList));
+  }, []); 
 
   {/*검색기능*/}
   const items = posts.filter((data) => {
     if (btClick == 1) { //버튼 클릭 했을때
       if (search == null)
         return data
-      else if (data.title.toLowerCase().includes(search.toLowerCase()) || data.name.toLowerCase().includes(search.toLowerCase())) {
+      else if (data.name.toLowerCase().includes(search.toLowerCase()) || data.author.toLowerCase().includes(search.toLowerCase())) {
         return data
       }
     }
@@ -39,10 +44,10 @@ function Genre() {
       <div id="box">
         <div className="col-xs-1 col-lg-3 col-md-1">
           <div className="img-wp">
-            <img type="button" id="Cardimg" src={data.picture}/>
+            <img type="button" id="Cardimg" src={data.image}/>
           </div>
-          <h5 type="button" id="title">{data.title}</h5>
-          <p type="button" id="name">{data.name}</p>
+          <h5 type="button" id="title">{data.name}</h5>
+          <p type="button" id="name">{data.author}</p>
         </div>
       </div>
     )
@@ -53,7 +58,7 @@ function Genre() {
       {/*메인 로고 및 검색창*/}
       <div className="Logo">
         <Navbar.Brand href="/">
-          <img className="flock_logo" src='img/flock_logo.png'
+          <img className="flock_logo" src='../img/flock_logo.png'
           onClick={()=>{ navigate('/')}}/> {/*클릭하면 홈 이동*/}
         </Navbar.Brand>
 
@@ -68,12 +73,12 @@ function Genre() {
       <Navbar variant="dark">
         <Container>
           <Nav className="wkdfm">
-            <Nav.Link href="#1">일상/개그</Nav.Link>
-            <Nav.Link href="#2">순정</Nav.Link>
-            <Nav.Link href="#3">무협/사극</Nav.Link>
-            <Nav.Link href="#4">판타지/SF</Nav.Link>
-            <Nav.Link href="#5">스포츠</Nav.Link>
-            <Nav.Link href="#6">공포/스릴러</Nav.Link>
+            <Nav.Link href="/genre/gag">일상/개그</Nav.Link>
+            <Nav.Link href="/genre/love">순정</Nav.Link>
+            <Nav.Link href="/genre/action">무협/사극</Nav.Link>
+            <Nav.Link id="click" href="/genre/fantasy">판타지/SF</Nav.Link>
+            <Nav.Link href="/genre/sport">스포츠</Nav.Link>
+            <Nav.Link href="/genre/thrill">공포/스릴러</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

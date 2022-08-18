@@ -20,15 +20,20 @@ function Genre() {
 
   let navigate = useNavigate()
 
-  useEffect(() => setPosts(WebInfo)); //임시 데이터 불러왔음
-  
+  //데이터 불러왔음
+
+  useEffect(() => {
+    fetch('http://43.200.205.215:8080/webtoons?genre=순정')
+      .then((res) => res.json()) 
+      .then((data) => setPosts(data.webtoonInfoList));
+  }, []); 
 
   {/*검색기능*/}
   const items = posts.filter((data) => {
     if (btClick == 1) { //버튼 클릭 했을때
       if (search == null)
         return data
-      else if (data.title.toLowerCase().includes(search.toLowerCase()) || data.name.toLowerCase().includes(search.toLowerCase())) {
+      else if (data.name.toLowerCase().includes(search.toLowerCase()) || data.author.toLowerCase().includes(search.toLowerCase())) {
         return data
       }
     }
@@ -39,10 +44,10 @@ function Genre() {
       <div id="box">
         <div className="col-xs-1 col-lg-3 col-md-1">
           <div className="img-wp">
-            <img type="button" id="Cardimg" src={data.picture}/>
+            <img type="button" id="Cardimg" src={data.image}/>
           </div>
-          <h5 type="button" id="title">{data.title}</h5>
-          <p type="button" id="name">{data.name}</p>
+          <h5 type="button" id="title">{data.name}</h5>
+          <p type="button" id="name">{data.author}</p>
         </div>
       </div>
     )
@@ -68,12 +73,12 @@ function Genre() {
       <Navbar variant="dark">
         <Container>
           <Nav className="wkdfm">
-            <Nav.Link href="#1">일상/개그</Nav.Link>
-            <Nav.Link href="#2">순정</Nav.Link>
-            <Nav.Link href="#3">무협/사극</Nav.Link>
-            <Nav.Link href="#4">판타지/SF</Nav.Link>
-            <Nav.Link href="#5">스포츠</Nav.Link>
-            <Nav.Link href="#6">공포/스릴러</Nav.Link>
+            <Nav.Link href="#gag">일상/개그</Nav.Link>
+            <Nav.Link id="click" href="#love">순정</Nav.Link>
+            <Nav.Link href="#action">무협/사극</Nav.Link>
+            <Nav.Link href="#fantasy">판타지/SF</Nav.Link>
+            <Nav.Link href="#sport">스포츠</Nav.Link>
+            <Nav.Link href="#thrill">공포/스릴러</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
