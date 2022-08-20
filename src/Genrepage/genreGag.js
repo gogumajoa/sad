@@ -44,10 +44,14 @@ function Genre() {
       <div id="box">
         <div className="col-xs-1 col-lg-3 col-md-1">
           <div className="img-wp">
-            <img type="button" id="Cardimg" src={data.image}/>
+            <img type="button" id="Cardimg" 
+            onClick={() => { navigate(`/detail/${data.id}`) }}
+            src={data.image}/>
           </div>
-          <h5 type="button" id="title">{data.name}</h5>
-          <p type="button" id="name">{data.author}</p>
+          <h5 type="button" id="title"
+          onClick={() => { navigate(`/detail/${data.id}`) }}>{data.name}</h5>
+          <p type="button" id="name"
+          onClick={() => { navigate(`/detail/${data.id}`) }}>{data.author}</p>
         </div>
       </div>
     )

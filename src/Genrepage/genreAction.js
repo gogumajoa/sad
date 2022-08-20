@@ -1,12 +1,10 @@
 import '../genre.css';
 import {Nav, Navbar, Container, Col, Row} from 'react-bootstrap'
-import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import WebtInfo from '../webt-info.js';
 import Pagination from '../Pagination/pagination.js'
 
 function Genre() {
-  let [WebInfo] = useState(WebtInfo)
 
   let [search, setSearch] = useState(null)
   let [btClick, setbtClick] = useState(0)
@@ -21,12 +19,15 @@ function Genre() {
   let navigate = useNavigate()
 
   //데이터 불러왔음
-
   useEffect(() => {
     fetch('http://43.200.205.215:8080/webtoons?genre=무협')
       .then((res) => res.json()) 
       .then((data) => setPosts(data.webtoonInfoList));
   }, []); 
+
+  // let findId = posts.find((x)=>{
+  //   return x.id
+  // });
 
   {/*검색기능*/}
   const items = posts.filter((data) => {
@@ -44,10 +45,14 @@ function Genre() {
       <div id="box">
         <div className="col-xs-1 col-lg-3 col-md-1">
           <div className="img-wp">
-            <img type="button" id="Cardimg" src={data.image}/>
+            <img type="button" id="Cardimg" 
+            onClick={() => { navigate(`/detail/${data.id}`) }}
+            src={data.image}/>
           </div>
-          <h5 type="button" id="title">{data.name}</h5>
-          <p type="button" id="name">{data.author}</p>
+          <h5 type="button" id="title"
+          onClick={() => { navigate(`/detail/${data.id}`) }}>{data.name}</h5>
+          <p type="button" id="name"
+          onClick={() => { navigate(`/detail/${data.id}`) }}>{data.author}</p>
         </div>
       </div>
     )

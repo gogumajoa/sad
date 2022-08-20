@@ -14,6 +14,8 @@ import Fantasy from './Genrepage/genreFantasy';
 import Sport from './Genrepage/genreSport';
 import Thrill from './Genrepage/genreThrill';
 
+import Detail from './detail.js';
+
 function App() {
 
   return (
@@ -79,9 +81,9 @@ function App() {
       </Routes>
 
       {/* 웹툰 세부 정보 페이지 */}
-      {/* <Routes>
-        <Route path="/detail" element={ <Detail/>} />
-      </Routes> */}
+      <Routes>
+        <Route path="/detail/:id" element={ <Detail/>} />
+      </Routes>
 
     </div>
   );

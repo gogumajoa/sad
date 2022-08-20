@@ -1,0 +1,118 @@
+/*상단 웹툰 정보 박스*/
+.InfoBox{
+    width: 70vw;
+    height:280px;
+ 
+    background-color: rgb(241,241,241);
+    border-radius: 40px; 
+    padding: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+
+}
+#imgBox{
+ width : 240px;
+}
+
+.infosection{
+    display: flex;
+    width: 105%;
+    line-height: 30px;
+}
+
+.infolist{
+    margin-top: 10px;
+    text-align: start;
+    margin-left: 20px;
+    width: 120%;
+}
+#listfont{
+    font-weight: 550;
+}
+.Star{
+    text-align: start;
+    float:left;
+    margin-left:20px;
+    bottom: 400px;
+}
+
+/*별점주기 왼쪽에 띄어쓰기*/
+#s1{ 
+    margin-left: 20px;
+}
+
+/* 하단 댓글 박스 */
+.ComtBox{
+    width: 70vw;
+    height: 500px;
+ 
+    background-color: rgb(241,241,241);
+    border-radius: 40px; 
+    padding: 30px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+
+.commentText{
+    float:left;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+
+/*댓글창*/
+#input_comment{
+    color: #797979;
+    width: 100%;
+    height: 15%;
+    font-size: 15px;
+    border-color: #707070;
+    margin-bottom: 8px;
+    border-width: 1.4px;
+    border-style : solid;
+    padding: 10px;
+    position: static;
+}
+
+/*댓글 등록 버튼*/
+#Up_comment{ 
+    width: 50px;
+    height: 30px;
+    background-color: #1F3E1B;
+    border-radius: 10px;
+    font-size : 13px;
+    font-weight: 500;
+    color: #ffffff;
+    float: right;
+}
+
+.commentList{
+    /* line-height: 40px; */
+    text-align: left;
+}
+
+.commentList2 {
+    /* display: flex; */
+    margin-top : 20px;
+    font-size: 16px;
+    border-bottom: solid 1px black;
+  }
+
+.userName{
+    font-weight: 900;
+    font-size: 13px;
+}
+
+.commentTime{
+    font-size: 14px;
+    margin-bottom : 12px;
+}
+
+.radio{  /*라디오 버튼 부분*/
+    display: flex;
+    margin-top: 30px;
+}
