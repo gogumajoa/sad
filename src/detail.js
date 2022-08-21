@@ -19,16 +19,30 @@ function Detail(){
 
     //데이터 불러옴
     useEffect(() => {
+        if(localStorage.getItem('accessToken')=== 'null'){
         fetch(`http://43.200.205.215:8080/webtoons/${id}`,{
             
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('accessToken')//엑세스 토큰 필요
+                'Content-Type': 'application/json', //로그아웃 경우
             },
             
         })
           .then((res) => res.json()) 
           .then((info_data) => setInfo_data(info_data));
+        }
+        else{
+            fetch(`http://43.200.205.215:8080/webtoons/${id}`,{
+            
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('accessToken')//로그인 경우
+            },
+            
+        })
+          .then((res) => res.json()) 
+          .then((info_data) => setInfo_data(info_data));
+        
+        }
     }, []); 
 
     //별점 받기
