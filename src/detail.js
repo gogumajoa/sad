@@ -197,22 +197,6 @@ function Detail(){
                         
                     >등록</button>
 
-                    {/* <div className="radio">
-                        <input
-                            type='radio'
-                            id='radio'
-                            checked={inputStatus === 'radio'}
-                            onClick={() => handleClickRadioButton('radio')} />
-                        <label htmlFor='radio'>BEST 댓글</label>
-
-                        <input
-                            type='radio'
-                            id='radio1'
-                            checked={inputStatus === 'radio1'}
-                            onClick={() => handleClickRadioButton('radio1')} />
-                        <label htmlFor='radio1'>최신순</label>
-                    </div> */}
-
                     {/* 댓글을 목록으로 나타대는 태그 */}
                     <div className="commentList">
                         {
