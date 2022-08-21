@@ -14,7 +14,7 @@
 }
   
 .star_span {
-
+    width: 0;
     position: absolute; 
     left: 0;
     color: #FFE200;

@@ -1,11 +1,9 @@
 import './App.css';
 import {Nav, Navbar, Container } from 'react-bootstrap'
 import { Routes, Route } from 'react-router-dom'
-import Genre from './genre.js'
 import Main from './main.js'
-import Genrecopy from './genrecopy2.js';
 import Login from './Login.js';
-import Join from './join.js';
+import Join from './Join.js';
 
 import Action from './Genrepage/genreAction';
 import Love from './Genrepage/genreLove';
@@ -15,9 +13,36 @@ import Sport from './Genrepage/genreSport';
 import Thrill from './Genrepage/genreThrill';
 
 import Detail from './detail.js';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
 
+  const navigate=useNavigate();
+
+  const a=()=>{
+    if(localStorage.getItem('accessToken')!=null)
+    {
+      <Nav.Link href="/login" onClick={signout}>LOGOUT</Nav.Link>
+    }
+    else{
+      <Nav.Link href="/login">LOGIN</Nav.Link>
+    }
+  }
+
+  const signout=()=> { //로그아웃 서버 연결
+    fetch('http://43.200.205.215:8080/logoutcon',{
+
+    method : "POST",
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
+    },
+    })
+
+    .then(localStorage.setItem('accessToken', null))
+    .then(navigate('/'));
+
+};
   return (
     <div className="App">
       <div className = "Nave_bar">
@@ -25,16 +50,15 @@ function App() {
         <Container>
           <Nav className="me-auto">
             <Nav.Link href="#MYPAGE">MYPAGE</Nav.Link>
-            <Nav.Link href="/login">LOGIN</Nav.Link>
+            {(localStorage.getItem('accessToken') === 'null') ? (<Nav.Link href="/login">LOGIN</Nav.Link>) 
+            : (<Nav.Link href="/" onClick={signout}>LOGOUT</Nav.Link>
+            )}
             <Nav.Link href="/join">JOIN</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
       </div>
 
-      <Routes>
-        <Route path="/genre" element={ <Genre/>} />
-      </Routes>
 
       {/* 메인 화면 이동 */}
       <Routes>
@@ -51,9 +75,6 @@ function App() {
         <Route path="/join" element={ <Join/>} />
       </Routes>
 
-      <Routes>
-        <Route path="/genrecopy" element={ <Genrecopy/>} />
-      </Routes>
 
       {/* 장르별 화면 */}
       <Routes>

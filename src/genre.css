@@ -1,125 +1,128 @@
 .Genre {
-    text-align: center;
+  text-align: center;
 }
 
 /*로고, 검색창, 검색버튼*/
 .Logo{
-  position: relative;
-  top: 20px;
-  display: flex;
-  justify-content: center;
-  margin : 0 auto;
+position: relative;
+top: 20px;
+display: flex;
+justify-content: center;
+margin : 0 auto;
 }
-  
+
 .flock_logo{
-  width : 150px;
-  margin-right : 25px;
+width : 150px;
+margin-right : 25px;
 }
-  
+
 #input {
-  width : 40%;
-  padding : 10px;
-  border-radius : 15px;
-  border : 2px solid #1F3E1B;
-  margin-right : 20px;
+width : 40%;
+padding : 10px;
+border-radius : 15px;
+border : 2px solid #1F3E1B;
+margin-right : 20px;
 }
-  
+
 #button {
-  font-size : 15px;
-  color : #ffffff;
-  background-color : #1F3E1B;
-  border-radius : 15px;
-  padding : 11.5px;
-  border : 2px solid #1F3E1B;
+font-size : 15px;
+color : #ffffff;
+background-color : #1F3E1B;
+border-radius : 15px;
+padding : 11.5px;
+border : 2px solid #1F3E1B;
 }
-  
+
 /*가운데 메뉴바 css*/
 .center_bar{
-  position: relative;
-  background-color : #1F3E1B;
-  color : #ffffff;
-  top: 50px;
-  width : 600px;
-  height : 60px;
-  border-radius : 30px;
-  margin : 0 auto;
+position: relative;
+background-color : #1F3E1B;
+color : #ffffff;
+top: 50px;
+width : 600px;
+height : 60px;
+border-radius : 30px;
+margin : 0 auto;
 }
-  
+
 .wkdfm{
-  margin: 0 auto;
+margin: 0 auto;
 }
 
 #click{
-  color : #ffffff;
+color : #ffffff;
 }
-  
+
 /*웹툰 목록 css*/
 
 .Tooncontainer{
-  position: relative;
-  /* width : 80%; */
-  top: 90px;
+position: relative;
+/* width : 80%; */
+top: 90px;
 }
-  
+
 .row{
-  margin : 0;
+margin : 0;
 }
 
 #box{
-  width : 240px;
-  height: 260px;
-  display: flex;
-  justify-content: center;
-  margin : 0 auto;
+width : 240px;
+height: 260px;
+display: flex;
+justify-content: center;
+/* margin : 0 auto; */
+}
+
+#box:hover{
+transform: translateY(-6px);
 }
 
 .col-md-1{
-  width: 130px;
-  height: 220px;
+width: 130px;
+height: 220px;
 }
 
 .justify-content-center{
-  width : 75%;
-  display: flex;
-  justify-content: center;
-  margin : 0 auto;
+width : 75%;
+display: flex;
+justify-content: center;
+margin : 0 auto;
 }
-  
+
 /*이미지 & 정사각형*/
 .img-wp {
-  width: 170px;
-  height: 170px;
+width: 170px;
+height: 170px;
 }
 
 #Cardimg{
-  border-radius : 15px;
-  border : 0px solid #707070;
-  transform: translate(50, 50);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin: 0 auto;
+border-radius : 15px;
+border : 0px solid #707070;
+transform: translate(50, 50);
+width: 100%;
+height: 100%;
+object-fit: cover;
+margin: 0 auto;
 }
-  
+
 /*웹툰명 및 작가명*/
 #title{
-  position: relative;
-  width: 170px;
-  top : 10px;
-  font-size : 18px;
-  font-weight: 600;
-  text-align : left;
+position: relative;
+width: 170px;
+top : 10px;
+font-size : 18px;
+font-weight: 600;
+text-align : left;
 }
 #name{
-  position: relative;
-  top : 5px;
-  text-align : left;
+position: relative;
+top : 5px;
+text-align : left;
 }
 
 /*페이지네이션 버튼*/
 .Pagina{
-  position: relative;
-  top : 90px;
-  bottom : 30px;
+position: relative;
+top : 90px;
+bottom : 30px;
 }
-  
